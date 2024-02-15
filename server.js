@@ -9,10 +9,35 @@ const PORT = 3000
 //Middleware
 
 
+//Data
+// let plants = [`Sunflower`, `Daisy`, `Roses`, `Lily`]
+
 //ROUTES
-app.get(
-    
-)
+app.get('/', (req, res)=>{
+    res.send(`Home Route`);
+});
+app.get("/", (req, res) => {
+    res.send("Try navigating to /user.");
+  });
+  
+  app.get("/user", (req, res) => {
+    res.send(`Received a GET request for user!
+  Try navigating to /user/somevalue/profile/somevalue.`);
+  });
+  
+  app.get("/user/:userID", (req, res) => {
+    res.send(`Navigated to the user page for: ${req.params.userID}.`);
+  });
+  
+  app.get("/user/:userID/profile", (req, res) => {
+    res.send(`Navigated to the user profile page for: ${req.params.userID}.`);
+  });
+  
+  app.get("/user/:userID/profile/:data", (req, res) => {
+    res.send(
+      `Navigated to the user profile page for: ${req.params.userID}, with the data: ${req.params.data}.`
+    );
+  });
 
 //we must listen to the server on specified PORT
 //LISTENING SHOULD ALWAYS BE THE LAST THING ON THE FILE
