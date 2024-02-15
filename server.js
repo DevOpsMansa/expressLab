@@ -10,6 +10,9 @@ const PORT = 3000
 
 
 //ROUTES
+app.get(
+    
+)
 
 //we must listen to the server on specified PORT
 //LISTENING SHOULD ALWAYS BE THE LAST THING ON THE FILE
